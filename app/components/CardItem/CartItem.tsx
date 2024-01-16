@@ -11,7 +11,7 @@ const CardItem = () => {
 export default CardItem;
 
 
-//next.js에서는 두가지 컴포넌트가 가능하다
+//next.js에서는 두 가지 컴포넌트가 가능하다
 
 //server component 랑 client component
 //아무곳이나 대충 만드는 것은 서버 컴포넌트

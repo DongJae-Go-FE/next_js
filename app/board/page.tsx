@@ -16,4 +16,4 @@ export default async function Board() {
 }
 
 
-//db 입출력 코드는 서버 컴포넌트 안에서만 씁시다.
+//db 입출력 코드는 서버 컴포넌트 안에서만 씁시다...

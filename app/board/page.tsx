@@ -11,9 +11,18 @@ export default async function Board() {
     <div>
       <p>{result[0].title}</p>
       <p>{result[0].content}</p>
+      <div className="list-bg">
+        {result.map((item, index) => {
+          return (
+            <div className="list-item" key={index}>
+              <h4>{item.title}</h4>
+              <p>{item.content}</p>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
-
 
 //db 입출력 코드는 서버 컴포넌트 안에서만 씁시다.

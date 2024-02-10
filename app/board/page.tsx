@@ -1,4 +1,5 @@
 import { connectDB } from "@/util/database";
+import Link from "next/link";
 
 export default async function Board() {
   const client = await connectDB;
@@ -14,10 +15,12 @@ export default async function Board() {
       <div className="list-bg">
         {result.map((item, index) => {
           return (
-            <div className="list-item" key={index}>
-              <h4>{item.title}</h4>
-              <p>{item.content}</p>
-            </div>
+            <Link href={`/detail/${item._id}`} key={index}>
+              <div className="list-item">
+                <h4>{item.title}</h4>
+                <p>{item.content}</p>
+              </div>
+            </Link>
           );
         })}
       </div>

@@ -1,5 +1,6 @@
 import { connectDB } from "@/util/database";
 import Link from "next/link";
+import RouterButton from "@/app/components/RouterButton/RouterButton"
 
 export default async function Board() {
   const client = await connectDB;
@@ -15,12 +16,11 @@ export default async function Board() {
       <div className="list-bg">
         {result.map((item, index) => {
           return (
-            <Link href={`/detail/${item._id}`} key={index}>
-              <div className="list-item">
-                <h4>{item.title}</h4>
-                <p>{item.content}</p>
-              </div>
-            </Link>
+            <div className="list-item" key={index}>
+              <Link href={`/detail/${item._id}`}>링크</Link>
+              <h4>{item.title}</h4>
+              <p>{item.content}</p>
+            </div>
           );
         })}
       </div>

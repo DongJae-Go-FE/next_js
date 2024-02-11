@@ -29,3 +29,9 @@ export default async function Board() {
 }
 
 //db 입출력 코드는 서버 컴포넌트 안에서만 씁시다.
+
+// 서버 메소드 정리
+//GET 서버에서 요청
+//POST 입력한 값을 서버에 보낼때
+//PUT, PATCH 요창힌 깂을 수정할 때
+//DELETE 값을 지울 때

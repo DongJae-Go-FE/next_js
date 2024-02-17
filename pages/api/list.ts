@@ -3,17 +3,27 @@ import { connectDB } from "@/util/database";
 export default async function handler(userGet: any, userPost: any) {
   const client = await connectDB;
   const db = client.db("test");
-  db.collection("post").insertOne({
-    title: userGet.body.title,
-    content: userGet.body.content,
-  });
-  const result = await db.collection("post").find().toArray();
 
   if (userGet.method === "POST") {
-    return userPost.status(200).json(result);
+    if (userGet.body.title === "") {
+      return userPost.status(500).json("타이틀 공백이야!!!");
+    } else {
+      db.collection("post").insertOne(userGet.body);
+      return userPost.redirect(302, "/board");
+    }
   }
 
   if (userGet.method === "GET") {
-    return userPost.status(200).json(result);
+    db.collection("post").insertOne(userGet.body);
+    return userPost.status(200).json("발행완료");
+  }
+
+  // 서버 에러
+  try {
+    let db = (await connectDB).db("forum");
+    db.collection("post").insertOne(userGet.body);
+    userPost.redirect(302, "/board");
+  } catch (error) {
+    alert(error);
   }
 }

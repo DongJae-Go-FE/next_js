@@ -20,7 +20,7 @@ export default async function handler(userGet: any, userPost: any) {
 
   // 서버 에러
   try {
-    let db = (await connectDB).db("forum");
+    let db = (await connectDB).db("test");
     db.collection("post").insertOne(userGet.body);
     userPost.redirect(302, "/board");
   } catch (error) {

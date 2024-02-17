@@ -23,7 +23,7 @@ export default function RootLayout({
           <Link href="/list">list페이지</Link>
           <Link href="/cart">cart</Link>
           <Link href="/board">게시판</Link>
-  
+          <Link href="/write">글작성</Link>
         </div>
         {children}
         {/* 페이지 보여주는 곳 */}

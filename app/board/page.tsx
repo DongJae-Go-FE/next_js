@@ -1,6 +1,5 @@
 import { connectDB } from "@/util/database";
 import Link from "next/link";
-import RouterButton from "@/app/components/RouterButton/RouterButton"
 
 export default async function Board() {
   const client = await connectDB;
@@ -8,7 +7,7 @@ export default async function Board() {
   // 해당 collection 의 모든 데이터를 가져옴.
   const result = await db.collection("post").find().toArray();
 
-  console.log(result);
+
   return (
     <div>
       <p>{result[0].title}</p>
@@ -18,6 +17,8 @@ export default async function Board() {
           return (
             <div className="list-item" key={index}>
               <Link href={`/detail/${item._id}`}>링크</Link>
+              <br />
+              <Link href={`/edit/${item._id}`}>수정</Link>
               <h4>{item.title}</h4>
               <p>{item.content}</p>
             </div>

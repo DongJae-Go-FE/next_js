@@ -1,5 +1,5 @@
 export default function handler(userGet: any, userPost: any) {
-  console.log(1, 2, 3);
+
 
   if (userGet.method === "POST") {
     return userPost.status(200).json("처리완료");

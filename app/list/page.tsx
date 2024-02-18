@@ -13,7 +13,7 @@ export default function List() {
     })
   );
 
-  console.log(counter);
+
 
   return (
     <div>

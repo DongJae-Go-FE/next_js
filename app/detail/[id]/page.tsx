@@ -1,5 +1,6 @@
 //다이나믹 라우터를 쓰면 폴더 하나로 무한히 페이지를 만들 수 있다.
 //[작명] => 작명한 명으로 라우팅을 시켜준다.
+import Link from "next/link";
 
 import { connectDB } from "@/util/database";
 import { ObjectId } from "mongodb";

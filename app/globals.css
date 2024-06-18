@@ -6,14 +6,13 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.7/dist/web/static/pretendard.css");
 
 @layer base {
-
-  html{
-    font-family: "Pretendard"
+  html {
+    font-family: "Pretendard";
   }
 
-  body{
-    *{
-      font-family: "Pretendard"
+  body {
+    * {
+      font-family: "Pretendard";
     }
   }
 
@@ -27,16 +26,18 @@
     @apply h-10 rounded-md px-6 bg-black text-white;
   }
 
-  .checkbox{
-    &:checked{
-       + p{
+  .checkbox {
+    &:checked {
+      + p {
         text-decoration: line-through;
       }
     }
   }
+
+  .form {
+    @apply border rounded-md bg-slate-200 shadow p-5;
+  }
 }
-
-
 
 .red {
   color: red;

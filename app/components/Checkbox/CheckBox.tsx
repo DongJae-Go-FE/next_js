@@ -3,7 +3,7 @@
 const CheckBox = ({ state, id }: { state: boolean; id: any }) => {
   const handlePutBtnClick = async (id: any, state: boolean) => {
     try {
-      const response = await fetch("/api/todoPut", {
+      const response = await fetch("/api/todo", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

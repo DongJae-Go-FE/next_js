@@ -1,17 +1,16 @@
 import { connectDB } from "@/util/database";
 import Button from "../components/Button/Button";
 import DelButton from "../components/DelButton/DelButton";
-import CheckBox from "../components/\bCheckbox/CheckBox";
+import CheckBox from "../components/Checkbox/CheckBox";
 
-export default async function Todo(props: any) {
+export default async function Todo() {
   const client = await connectDB;
   const db = client.db("todoList");
-  // 해당 collection 의 모든 데이터를 가져옴.
   const result = await db.collection("todoList").find().toArray();
 
   return (
-    <div className="w-96 m-auto">
-      <h2 className="text-center text-2xl mb-10">테일윈드 투두리스트</h2>
+    <div className="w-96 m-auto form">
+      <h2 className="text-center text-2xl mb-10">Tailwindcss TodoList</h2>
       <form action="GET">
         <ul className="mb-10">
           {result.map((item, index) => {

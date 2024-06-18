@@ -1,3 +1,43 @@
+/* global.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.7/dist/web/static/pretendard.css");
+
+@layer base {
+
+  html{
+    font-family: "Pretendard"
+  }
+
+  body{
+    *{
+      font-family: "Pretendard"
+    }
+  }
+
+  input[type="text"] {
+    @apply border rounded-md mr-5 flex-1 px-4 h-10;
+  }
+}
+
+@layer components {
+  .button {
+    @apply h-10 rounded-md px-6 bg-black text-white;
+  }
+
+  .checkbox{
+    &:checked{
+       + p{
+        text-decoration: line-through;
+      }
+    }
+  }
+}
+
+
+
 .red {
   color: red;
 }
@@ -38,20 +78,4 @@
 .list-item p {
   color: grey;
   margin: 5px 0px;
-}
-
-.p-20 {
-  padding: 20px;
-}
-.input {
-  box-sizing: border-box;
-  padding: 10px;
-  display: block;
-  margin-bottom: 10px;
-}
-.button {
-  padding: 10px 15px;
-  background: lightgray;
-  border: none;
-  border-radius: 5px;
 }

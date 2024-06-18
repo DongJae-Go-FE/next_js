@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "../css/output.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="ko">
       <body className={inter.className}>
         <div className="navbar">
           <Link href="/">home</Link>
@@ -24,9 +25,9 @@ export default function RootLayout({
           <Link href="/cart">cart</Link>
           <Link href="/board">게시판</Link>
           <Link href="/write">글작성</Link>
+          <Link href="/todo">투두</Link>
         </div>
         {children}
-        {/* 페이지 보여주는 곳 */}
       </body>
     </html>
   );

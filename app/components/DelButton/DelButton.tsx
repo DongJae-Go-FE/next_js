@@ -16,6 +16,7 @@ const handleDeleteBtnClick = async (id: any) => {
     }
   } catch (error) {
     console.error(error);
+    alert(error);
   }
 };
 
